@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import React, { useState } from 'react';
-import { useBlocks } from '../BlocksContext'; // Импортируйте useBlocks
+import { useBlocks } from '../BlocksContext';
 
 
 const { width, height } = Dimensions.get('window');
@@ -13,7 +13,7 @@ type AddItemProps = {
 const AddItem: React.FC<AddItemProps> = ({ route, navigation }) => {
   const [heightBox, setHeightBox] = useState<string>('');
   const [widthBox, setWidthBox] = useState<string>('');
-  const { addBlock } = useBlocks(); // Используйте хук useBlocks
+  const { addBlock } = useBlocks(); 
 
   const handleHeightChange = (text: string) => {
     if (/^\d*$/.test(text)) {
@@ -47,14 +47,14 @@ const AddItem: React.FC<AddItemProps> = ({ route, navigation }) => {
 
     if (widthValue > 0 && heightValue > 0) {
       const newBlock = {
-        id: Date.now(), // Генерируем уникальный ID для нового блока
+        id: Date.now(), 
         width: widthValue,
         height: heightValue
       };
-      addBlock(newBlock); // Добавляем новый блок в контекст
-      setWidthBox(''); // Очистить поле ввода ширины
-      setHeightBox(''); // Очистить поле ввода высоты
-      navigation.goBack(); // Возврат на предыдущий экран
+      addBlock(newBlock); 
+      setWidthBox('');
+      setHeightBox(''); 
+      navigation.goBack(); 
     } else {
       Alert.alert("Invalid Input", "Please enter valid width and height");
     }
