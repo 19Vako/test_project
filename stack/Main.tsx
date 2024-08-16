@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Modal, TouchableOpacity, TouchableWithoutFeedback, GestureResponderEvent, StyleSheet, Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
-import { useBlocks } from '../BlocksContext'; // Импортируйте хук useBlocks
+import { useBlocks } from '../BlocksContext'; 
 
 const { width, height } = Dimensions.get('window');
 const numColumns = 2;
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: height - 100, // Adjust height if needed
+    height: height - 100, 
   },
   emptyText: {
     fontSize: 50,
