@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet, Dimensions, TouchableOpacity, Alert } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { useBlocks } from '../BlocksContext'; // Импортируйте хук useBlocks
+import { useBlocks } from '../BlocksContext'; 
 
 const { width, height } = Dimensions.get('window');
 
 const EditItem: React.FC = () => {
   const route = useRoute();
   const navigation = useNavigation();
-  const { blocks, updateBlock } = useBlocks(); // Получите функцию обновления блока из контекста
+  const { blocks, updateBlock } = useBlocks();
 
   const { selectedBlockId } = route.params as { selectedBlockId: number };
 
@@ -45,8 +45,8 @@ const EditItem: React.FC = () => {
     }
 
     if (selectedBlock) {
-      updateBlock({ ...selectedBlock, width: widthValue, height: heightValue }); // Передайте полный объект блока
-      navigation.goBack(); // Вернуться на предыдущий экран
+      updateBlock({ ...selectedBlock, width: widthValue, height: heightValue }); 
+      navigation.goBack(); 
     }
   };
 
